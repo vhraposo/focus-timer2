@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+
+    --text-color-primary: #323238;
+}
+
+
+body{
+    background-color: #ffffff;
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+   
+}
+.timer{
+    padding-right: 25.2rem ;
+}
+
+
+.timerzone{
+    font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+    
+    display: flex;
+
+    margin-bottom: 1.6rem;
+
+    display: flex;
+    margin-top: 25.4rem;
+    font-size: 12.6rem;
+    width: 40.1rem;
+    line-height: 14.8rem;
+
+    color: var(--text-color-primary);
+
+    
+}
+
+
+
+
+
+.controls{
+    display: flex;
+    gap: 4rem;
+
+    margin-top: 4rem;
+    
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+
+    padding-top: 19.6rem;
+    gap: 4rem;
+
+  }
+  
+  
+  .cards img {
+    width: 13.8rem;
+    
+  }
+
+
+ 
+.first-column {
+    grid-column: 1/2;
+}
+    
+.second-column {
+    grid-column: 2/3;
+} 
+
+img{
+    cursor: pointer;
+    
+}
+
+.hide{
+    display: none;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+video{
+    
+  width: 100vw;
+  height: 100vh; 
+  object-fit: cover;
+  
+}
+
+#banner1{
+    
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    
+    
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    top: 0;
+    text-align: center;
+    
+    
+}
+
+
+
+
+
+
+
+
+
+

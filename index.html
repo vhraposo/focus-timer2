@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer 2.0</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <div class="timer">
+
+            <div class="timerzone">
+                <span class="minutes">25</span>
+                <span>:</span>
+                <span class="seconds">00</span>
+            </div>
+            
+
+
+            <div class="controls">
+                
+                <button class="play">
+                    <img  src="./assets/play.svg" alt="botão de play">
+                </button >
+
+                <button class="pause hide" >
+                    <img  src="./assets/pause.png" width="57" height="57" alt="botão de pause">
+                </button >
+
+                <button id="stop">
+                    <img src="./assets/stop.svg" alt="botao de stop">
+                </button>
+                
+                <button class="sum">
+                    <img  src="./assets/sum.svg" alt="botão de mais">
+
+                </button>
+
+                <button class="sub">
+                    <img  src="./assets/sub.svg" alt="botão de menos">
+
+                </button>
+            </div>
+        </div>
+
+
+        <div class="cards">
+            <img class="first-column" id="naruto"  src="./assets/naruto.svg" alt="imagem de Naruto">
+
+            <img class="second-column" id="natsu" src="./assets/natsu.svg" alt="imagem de Natsu">
+
+            <img class="first-column"  id="tanjiro" src="./assets/tanjiro.svg" alt="imagem de Tanjiro">
+
+            <img class="second-column"  id="nero" src="./assets/nero.svg" alt="imagem de Nero">
+        </div>      
+
+    </div>
+
+    
+
+        <div class="nezuko hide " id="banner1">
+            <video autoplay muted loop>
+                <source src="./assets/nezuko.mp4" type="video/mp4">
+            </video>  
+        </div>
+    
+        <div class="natsu hide" id="banner1">
+            <video autoplay muted loop>
+                <source src="./assets/natsu.mp4" type="video/mp4">
+            </video>  
+        </div>
+    
+        <div class="narutovideo hide" id="banner1">
+            <video autoplay muted loop>
+                <source src="./assets/naruto.mp4" type="video/mp4">
+            </video>  
+        </div>
+    
+        <div class="blackvideo hide" id="banner1">
+            <video autoplay muted loop>
+                <source src="./assets/blackcover.mp4" type="video/mp4">
+            </video>  
+        </div>
+    
+           
+
+    <script src="./main.js" type="module"></script>
+</body>
+</html>
