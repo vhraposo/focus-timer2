@@ -10,21 +10,27 @@ const stop = document.querySelector("#stop")
 const sum = document.querySelector(".sum")
 const sub = document.querySelector(".sub")
 
+const svgElementPlay = document.querySelector('.play > svg')
+const svgElementPause = document.querySelector('.pause > svg')
+const svgElementStop = document.querySelector('#stop > svg')
+const svgElementSum = document.querySelector('.sum > svg')
+const svgElementSub = document.querySelector('.sub > svg')
+
 const naruto = document.querySelector("#naruto")
 const natsu = document.querySelector("#natsu")
 const tanjiro = document.querySelector("#tanjiro")
 const nero = document.querySelector("#nero")
 
 const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
-const samidare = new Audio("./assets/samidare.mp3")
-const tanjiromp3 = new Audio("./assets/tanjironouta.mp3")
-const fairytail = new Audio("./assets/fairytail.mp3")
-const blackrover = new Audio("./assets/blackrover.mp3")
+const samidaremp3 = new Audio("./audio/samidare.mp3")
+const tanjiromp3 = new Audio("./audio/tanjironouta.mp3")
+const fairytailmp3 = new Audio("./audio/fairytail.mp3")
+const blackrovermp3 = new Audio("./audio/blackrover.mp3")
 
-const nezuko = document.querySelector(".nezuko")
+const nezukomp4 = document.querySelector(".nezuko")
 const natsump4 = document.querySelector(".natsu")
-const narutovideo = document.querySelector(".narutovideo")
-const blackvideo = document.querySelector(".blackvideo")
+const narutomp4 = document.querySelector(".narutovideo")
+const blackmp4 = document.querySelector(".blackvideo")
 
 
 const narutovolume = document.querySelector(".narutovolume")
@@ -54,21 +60,21 @@ narutovolumedown.addEventListener('click', function(){
         narutovolumedown.classList.add('hide')
         narutovolume.classList.remove('hide')
         stopAllMp3()
-        samidare.play()
+        samidaremp3.play()
     }   
 )
 narutovolume.addEventListener('click', function(){
     narutovolumedown.classList.remove('hide')
     narutovolume.classList.add('hide')
     stopAllMp3()
-    samidare.pause()
+    samidaremp3.pause()
 })
 natsuvolumedown.addEventListener('click', function(){
     allVolumesdown()
     natsuvolumedown.classList.add('hide')
     natsuvolume.classList.remove('hide')
     stopAllMp3()
-    fairytail.play()
+    fairytailmp3.play()
 
        
 })
@@ -76,7 +82,7 @@ natsuvolume.addEventListener('click', function(){
     natsuvolumedown.classList.remove('hide')
     natsuvolume.classList.add('hide')
     stopAllMp3()
-    fairytail.pause()
+    fairytailmp3.pause()
     
     
 })
@@ -103,7 +109,7 @@ nerovolumedown.addEventListener('click', function(){
     nerovolumedown.classList.add('hide')
     nerovolume.classList.remove('hide')
     stopAllMp3()
-    blackrover.play()
+    blackrovermp3.play()
 
 })
 
@@ -111,16 +117,16 @@ nerovolume.addEventListener('click', function(){
     nerovolume.classList.add('hide')
     nerovolumedown.classList.remove('hide')
     stopAllMp3()
-    blackrover.pause()
+    blackrovermp3.pause()
 })
 
 
 
 function removeBG(){
-    nezuko.classList.add('hide')
+    nezukomp4.classList.add('hide')
     natsump4.classList.add('hide')
-    narutovideo.classList.add('hide')
-    blackvideo.classList.add('hide')
+    narutomp4.classList.add('hide')
+    blackmp4.classList.add('hide')
 
 }
 
@@ -130,10 +136,10 @@ seconds = Number('00');
 timer.innerHTML = String(minutes).padStart(2, "0") + ":" + (seconds < 10 ? "0" : "") + seconds; 
 
 function diminuir_volume(){
-    if( samidare.volume > 0)  samidare.volume -= 0.9;
+    if( samidaremp3.volume > 0)  samidaremp3.volume -= 0.9;
     if( tanjiromp3.volume > 0)  tanjiromp3.volume -= 0.9;
-    if( fairytail.volume > 0)  fairytail.volume -= 0.9;
-    if( blackrover.volume > 0)  blackrover.volume -= 0.9;
+    if( fairytailmp3.volume > 0)  fairytailmp3.volume -= 0.9;
+    if( blackrovermp3.volume > 0)  blackrovermp3.volume -= 0.9;
 
 }
 diminuir_volume()
@@ -168,19 +174,19 @@ function resetTimer(){
  }
 
 function stopAllMp3(){
-    blackrover.pause()
-    samidare.pause()
+    blackrovermp3.pause()
+    samidaremp3.pause()
     tanjiromp3.pause()
-    fairytail.pause()
+    fairytailmp3.pause()
 }
 
 
 
 function audioLoop(){
-    samidare.loop = true
+    samidaremp3.loop = true
     tanjiromp3.loop = true
-    fairytail.loop = true
-    blackrover.loop = true
+    fairytailmp3.loop = true
+    blackrovermp3.loop = true
 }
 audioLoop()
 
@@ -256,10 +262,11 @@ sub.addEventListener('click', function(){
 
 naruto.addEventListener('click', function(){
     removeBG()
-    narutovideo.classList.toggle('hide')
+    narutomp4.classList.toggle('hide')
     timer.style.color = "#B05000"
 
     svgElementPlay.style.fill = '#FF7C00'
+    svgElementPause.style.fill = '#FF7C00'
     svgElementStop.style.fill = '#FF7C00'
     svgElementSum.style.fill = '#FF7C00'
     svgElementSub.style.fill = '#FF7C00'
@@ -269,33 +276,31 @@ naruto.addEventListener('click', function(){
 
 nero.addEventListener('click', function(){
     removeBG()
-    blackvideo.classList.toggle('hide')
+    blackmp4.classList.toggle('hide')
     timer.style.color = "#A4D580"
 
 
     svgElementPlay.style.fill = '#2B493B'
+    svgElementPause.style.fill = '#2B493B'
     svgElementStop.style.fill = '#2B493B'
     svgElementSum.style.fill = '#2B493B'
     svgElementSub.style.fill = '#2B493B'
     
 })
 
-const svgElementPlay = document.querySelector('.play > svg')
-const svgElementStop = document.querySelector('#stop > svg')
-const svgElementSum = document.querySelector('.sum > svg')
-const svgElementSub = document.querySelector('.sub > svg')
 
 
 
 tanjiro.addEventListener('click', function(){
     removeBG()
-    nezuko.classList.toggle('hide')
+    nezukomp4.classList.toggle('hide')
     
     
     timer.style.color = "#FFFEFD"
    
     
     svgElementPlay.style.fill = '#FFFEFD'
+    svgElementPause.style.fill = '#FFFEFD'
     svgElementStop.style.fill = '#FFFEFD'
     svgElementSum.style.fill = '#FFFEFD'
     svgElementSub.style.fill = '#FFFEFD'
@@ -310,6 +315,7 @@ natsu.addEventListener('click', function(){
 
 
     svgElementPlay.style.fill = '#F8D15E'
+    svgElementPause.style.fill = '#F8D15E'
     svgElementStop.style.fill = '#F8D15E'
     svgElementSum.style.fill = '#F8D15E'
     svgElementSub.style.fill = '#F8D15E'
