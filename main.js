@@ -258,6 +258,11 @@ naruto.addEventListener('click', function(){
     removeBG()
     narutovideo.classList.toggle('hide')
     timer.style.color = "#964D46"
+
+    svgElementPlay.style.fill = '#BF8A3C'
+    svgElementStop.style.fill = '#BF8A3C'
+    svgElementSum.style.fill = '#BF8A3C'
+    svgElementSub.style.fill = '#BF8A3C'
 })
 
 //var para pegar o card selecionado, após isso ela pegara e salvara para uso futuro, com controle no play. 
@@ -266,8 +271,19 @@ nero.addEventListener('click', function(){
     removeBG()
     blackvideo.classList.toggle('hide')
     timer.style.color = "#A4D580"
+
+
+    svgElementPlay.style.fill = '#A4D580'
+    svgElementStop.style.fill = '#A4D580'
+    svgElementSum.style.fill = '#A4D580'
+    svgElementSub.style.fill = '#A4D580'
     
 })
+
+const svgElementPlay = document.querySelector('.play > svg')
+const svgElementStop = document.querySelector('#stop > svg')
+const svgElementSum = document.querySelector('.sum > svg')
+const svgElementSub = document.querySelector('.sub > svg')
 
 
 
@@ -279,15 +295,24 @@ tanjiro.addEventListener('click', function(){
     timer.style.color = "#FFFEFD"
    
     
-   
-    
+    svgElementPlay.style.fill = '#FFFEFD'
+    svgElementStop.style.fill = '#FFFEFD'
+    svgElementSum.style.fill = '#FFFEFD'
+    svgElementSub.style.fill = '#FFFEFD'
 
+   
 })
 
 natsu.addEventListener('click', function(){
     removeBG()
     natsump4.classList.toggle('hide')
     timer.style.color = "#B73829"
+
+
+    svgElementPlay.style.fill = '#F8D15E'
+    svgElementStop.style.fill = '#F8D15E'
+    svgElementSum.style.fill = '#F8D15E'
+    svgElementSub.style.fill = '#F8D15E'
 })
 
     
