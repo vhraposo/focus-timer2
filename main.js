@@ -27,6 +27,95 @@ const narutovideo = document.querySelector(".narutovideo")
 const blackvideo = document.querySelector(".blackvideo")
 
 
+const narutovolume = document.querySelector(".narutovolume")
+const narutovolumedown = document.querySelector(".narutovolumedown")
+const natsuvolume = document.querySelector(".natsuvolume")
+const natsuvolumedown = document.querySelector(".natsuvolumedown")
+const tanjirovolume = document.querySelector(".tanjirovolume")
+const tanjirovolumedown = document.querySelector(".tanjirovolumedown")
+const nerovolume = document.querySelector(".nerovolume")
+const nerovolumedown = document.querySelector(".nerovolumedown")
+
+const playtanjiro = document.querySelector(".playtanjiro")
+
+function allVolumesdown(){
+    narutovolumedown.classList.remove('hide')
+    natsuvolumedown.classList.remove('hide')
+    tanjirovolumedown.classList.remove('hide')
+    nerovolumedown.classList.remove('hide')
+
+    narutovolume.classList.add('hide')
+    natsuvolume.classList.add('hide')
+    tanjirovolume.classList.add('hide')
+    nerovolume.classList.add('hide')
+}
+narutovolumedown.addEventListener('click', function(){
+    allVolumesdown()
+        narutovolumedown.classList.add('hide')
+        narutovolume.classList.remove('hide')
+        stopAllMp3()
+        samidare.play()
+    }   
+)
+narutovolume.addEventListener('click', function(){
+    narutovolumedown.classList.remove('hide')
+    narutovolume.classList.add('hide')
+    stopAllMp3()
+    samidare.pause()
+})
+natsuvolumedown.addEventListener('click', function(){
+    allVolumesdown()
+    natsuvolumedown.classList.add('hide')
+    natsuvolume.classList.remove('hide')
+    stopAllMp3()
+    fairytail.play()
+
+       
+})
+natsuvolume.addEventListener('click', function(){
+    natsuvolumedown.classList.remove('hide')
+    natsuvolume.classList.add('hide')
+    stopAllMp3()
+    fairytail.pause()
+    
+    
+})
+tanjirovolumedown.addEventListener('click', function(){
+    allVolumesdown()
+    tanjirovolumedown.classList.add('hide')
+    tanjirovolume.classList.remove('hide')
+    stopAllMp3()
+    tanjiromp3.play()
+    
+})
+
+tanjirovolume.addEventListener('click', function(){
+    tanjirovolume.classList.add('hide')
+    tanjirovolumedown.classList.remove('hide')
+    stopAllMp3()
+    tanjiromp3.pause()
+
+    
+})
+
+nerovolumedown.addEventListener('click', function(){
+    allVolumesdown()
+    nerovolumedown.classList.add('hide')
+    nerovolume.classList.remove('hide')
+    stopAllMp3()
+    blackrover.play()
+
+})
+
+nerovolume.addEventListener('click', function(){
+    nerovolume.classList.add('hide')
+    nerovolumedown.classList.remove('hide')
+    stopAllMp3()
+    blackrover.pause()
+})
+
+
+
 function removeBG(){
     nezuko.classList.add('hide')
     natsump4.classList.add('hide')
@@ -40,6 +129,14 @@ minutes = 25;
 seconds = Number('00');
 timer.innerHTML = String(minutes).padStart(2, "0") + ":" + (seconds < 10 ? "0" : "") + seconds; 
 
+function diminuir_volume(){
+    if( samidare.volume > 0)  samidare.volume -= 0.9;
+    if( tanjiromp3.volume > 0)  tanjiromp3.volume -= 0.9;
+    if( fairytail.volume > 0)  fairytail.volume -= 0.9;
+    if( blackrover.volume > 0)  blackrover.volume -= 0.9;
+
+}
+diminuir_volume()
 
 // atualizar o contador 
 function updateTimer() {
@@ -54,6 +151,7 @@ function updateTimer() {
         timer.innerHTML = String(minutes).padStart(2, "0") + ":" + (seconds < 10 ? "0" : "") + seconds;  
     }
 }
+
 // iniciar o contador 
 function startTimer() {
     intervalId = setInterval(updateTimer, 1000);
@@ -110,10 +208,18 @@ play.addEventListener('click', function(){
     play.classList.toggle('hide')
     pause.classList.toggle('hide')
     buttonPressAudio.play()
-    verifyIsBackground()
     startTimer()
     
 })
+
+const volup = document.querySelector(".volup")
+const voldown = document.querySelector(".voldown")
+
+function verifyIsPlaying(){
+    volup.classList.add('hide')
+    voldown.classList.remove('hide')
+}
+
 
 pause.addEventListener('click', function(){
     play.classList.toggle('hide')
@@ -121,6 +227,7 @@ pause.addEventListener('click', function(){
     buttonPressAudio.play()
     pauseTimer() 
     stopAllMp3() 
+    verifyIsPlaying()
 })
 
 stop.addEventListener('click', function(){
@@ -148,75 +255,43 @@ sub.addEventListener('click', function(){
 })
 
 naruto.addEventListener('click', function(){
-    stopAllMp3()
-    samidare.play()
     removeBG()
     narutovideo.classList.toggle('hide')
     timer.style.color = "#964D46"
-    resetTimer()
-    startTimer()
-    verifiyUpdateTimer()
-
-
-    
-
 })
 
+//var para pegar o card selecionado, após isso ela pegara e salvara para uso futuro, com controle no play. 
+
 nero.addEventListener('click', function(){
-    stopAllMp3()
-    blackrover.play()
     removeBG()
     blackvideo.classList.toggle('hide')
     timer.style.color = "#A4D580"
-    resetTimer()
-    startTimer()
-    verifiyUpdateTimer()
-
+    
 })
 
+
+
 tanjiro.addEventListener('click', function(){
-    stopAllMp3()
-    tanjiromp3.play()
     removeBG()
     nezuko.classList.toggle('hide')
+    
+    
     timer.style.color = "#FFFEFD"
-    resetTimer()
-    startTimer()
-    verifiyUpdateTimer()
+   
+    
+   
+    
+
 })
 
 natsu.addEventListener('click', function(){
-    stopAllMp3()
-    fairytail.play()
     removeBG()
     natsump4.classList.toggle('hide')
     timer.style.color = "#B73829"
-    resetTimer()
-    startTimer()
-    verifiyUpdateTimer()
 })
 
-let clicked = false
     
-    tanjiro.onclick = function() {
-        clicked = true
-        console.log(clicked)
-
- }
-
-function verifyIsBackground(clicked){
-    
-switch (clicked) {
-    
-    case tanjiro:
-        tanjiromp3.play()
-        break;
-   
-
-    default:
-        break;
-}
-}
+ 
 
 
 

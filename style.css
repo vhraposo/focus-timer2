@@ -38,7 +38,7 @@ body{
     margin-bottom: 1.6rem;
 
     display: flex;
-    margin-top: 25.4rem;
+    margin-top: 15.4rem;
     font-size: 12.6rem;
     width: 40.1rem;
     line-height: 14.8rem;
@@ -47,9 +47,6 @@ body{
 
     
 }
-
-
-
 
 
 .controls{
@@ -65,8 +62,8 @@ body{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
 
-    padding-top: 19.6rem;
-    gap: 4rem;
+    padding-top: 15.6rem;
+    gap: 5rem;
 
   }
   
@@ -76,7 +73,10 @@ body{
     
   }
 
-
+  .cards img:focus{
+    border: 1px solid red;
+    border-radius: 5rem;
+  }
  
 .first-column {
     grid-column: 1/2;
@@ -122,6 +122,24 @@ video{
     text-align: center;
     
     
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+
+
+.card :nth-child(2){
+    width: 4rem;
+    height: 4rem;
+}
+
+.card :nth-child(3){
+    width: 4rem;
+    height: 4rem;
 }
 
 

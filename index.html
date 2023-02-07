@@ -27,9 +27,11 @@
 
             <div class="controls">
                 
-                <button class="play">
-                    <img  src="./assets/play.svg" alt="botão de play">
+                <button class="play ">
+                    <img  src="./assets/play.svg " alt="botão de play">
                 </button >
+
+            
 
                 <button class="pause hide" >
                     <img  src="./assets/pause.png" width="57" height="57" alt="botão de pause">
@@ -53,13 +55,39 @@
 
 
         <div class="cards">
-            <img class="first-column" id="naruto"  src="./assets/naruto.svg" alt="imagem de Naruto">
 
-            <img class="second-column" id="natsu" src="./assets/natsu.svg" alt="imagem de Natsu">
+            <div class="card">
+                <img class="first-column" tabindex="0" id="naruto"  src="./assets/naruto.svg" alt="imagem de Naruto">
+                <img src="./assets/volume.png" class="narutovolume hide volup"  alt="">
+                <img src="./assets/mute.png" class=" narutovolumedown voldown"  alt="">
 
-            <img class="first-column"  id="tanjiro" src="./assets/tanjiro.svg" alt="imagem de Tanjiro">
+            </div>
 
-            <img class="second-column"  id="nero" src="./assets/nero.svg" alt="imagem de Nero">
+            <div class="card">
+                <img class="second-column" tabindex="0" id="natsu" src="./assets/natsu.svg" alt="imagem de Natsu">
+                <img src="./assets/volume.png" class="natsuvolume volup hide"  alt="">
+                <img src="./assets/mute.png" class="natsuvolumedown voldown"  alt="">
+
+
+            </div>
+
+            <div class="card">
+                <img class="first-column" tabindex="0"  id="tanjiro" src="./assets/tanjiro.svg" alt="imagem de Tanjiro">
+                <img src="./assets/volume.png" class="tanjirovolume volup hide"   alt="">
+                <img src="./assets/mute.png" class=" tanjirovolumedown voldown"  alt="">
+
+
+            </div>
+
+           <div class="card">
+                <img class="second-column" tabindex="0" id="nero" src="./assets/nero.svg" alt="imagem de Nero">
+                <img src="./assets/volume.png" class="nerovolume volup hide"  alt="">
+                <img src="./assets/mute.png" class="nerovolumedown voldown"  alt="">
+
+
+           </div>
+
+
         </div>      
 
     </div>
@@ -89,9 +117,8 @@
                 <source src="./assets/blackcover.mp4" type="video/mp4">
             </video>  
         </div>
-    
-           
 
+        
     <script src="./main.js" type="module"></script>
 </body>
 </html>
