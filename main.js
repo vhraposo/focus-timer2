@@ -257,12 +257,12 @@ sub.addEventListener('click', function(){
 naruto.addEventListener('click', function(){
     removeBG()
     narutovideo.classList.toggle('hide')
-    timer.style.color = "#964D46"
+    timer.style.color = "#B05000"
 
-    svgElementPlay.style.fill = '#BF8A3C'
-    svgElementStop.style.fill = '#BF8A3C'
-    svgElementSum.style.fill = '#BF8A3C'
-    svgElementSub.style.fill = '#BF8A3C'
+    svgElementPlay.style.fill = '#FF7C00'
+    svgElementStop.style.fill = '#FF7C00'
+    svgElementSum.style.fill = '#FF7C00'
+    svgElementSub.style.fill = '#FF7C00'
 })
 
 //var para pegar o card selecionado, após isso ela pegara e salvara para uso futuro, com controle no play. 
@@ -273,10 +273,10 @@ nero.addEventListener('click', function(){
     timer.style.color = "#A4D580"
 
 
-    svgElementPlay.style.fill = '#A4D580'
-    svgElementStop.style.fill = '#A4D580'
-    svgElementSum.style.fill = '#A4D580'
-    svgElementSub.style.fill = '#A4D580'
+    svgElementPlay.style.fill = '#2B493B'
+    svgElementStop.style.fill = '#2B493B'
+    svgElementSum.style.fill = '#2B493B'
+    svgElementSub.style.fill = '#2B493B'
     
 })
 

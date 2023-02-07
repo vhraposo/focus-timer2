@@ -75,7 +75,7 @@ body{
 
   .cards img:focus{
     border: 1px solid red;
-    border-radius: 5rem;
+    
   }
  
 .first-column {
@@ -86,7 +86,7 @@ body{
     grid-column: 2/3;
 } 
 
-img{
+img, svg{
     cursor: pointer;
     
 }
