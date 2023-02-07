@@ -120,8 +120,6 @@ nerovolume.addEventListener('click', function(){
     blackrovermp3.pause()
 })
 
-
-
 function removeBG(){
     nezukomp4.classList.add('hide')
     natsump4.classList.add('hide')
@@ -129,7 +127,6 @@ function removeBG(){
     blackmp4.classList.add('hide')
 
 }
-
 
 minutes = 25;
 seconds = Number('00');
@@ -179,8 +176,6 @@ function stopAllMp3(){
     tanjiromp3.pause()
     fairytailmp3.pause()
 }
-
-
 
 function audioLoop(){
     samidaremp3.loop = true

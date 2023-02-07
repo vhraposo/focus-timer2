@@ -73,10 +73,7 @@ body{
     
   }
 
-  .cards img:focus{
-    border: 1px solid red;
-    
-  }
+
  
 .first-column {
     grid-column: 1/2;
