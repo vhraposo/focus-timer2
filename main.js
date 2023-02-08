@@ -394,13 +394,14 @@ lightModeActive.addEventListener('click', function(){
     lightModeActive.classList.add('hide')
     darkModeActive.classList.remove('hide')
     document.body.style.setProperty('--bg-color-primary', 'black')
-
+    
 })
 
 darkModeActive.addEventListener('click', function(){
     lightModeActive.classList.remove('hide')
     darkModeActive.classList.add('hide')
     document.body.style.setProperty('--bg-color-primary', 'white')
+    
 
 })
 

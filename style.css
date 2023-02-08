@@ -208,5 +208,7 @@ video{
 
 
 
-
+h1{
+    color: var( --text-color-primary);
+}
 
