@@ -120,7 +120,7 @@ nerovolume.addEventListener('click', function(){
     blackrovermp3.pause()
 })
 
-function removeBG(){
+function removeAnimeBg(){
     nezukomp4.classList.add('hide')
     natsump4.classList.add('hide')
     narutomp4.classList.add('hide')
@@ -132,14 +132,14 @@ minutes = 25;
 seconds = Number('00');
 timer.innerHTML = String(minutes).padStart(2, "0") + ":" + (seconds < 10 ? "0" : "") + seconds; 
 
-function diminuir_volume(){
+(function diminuir_volume(){
     if( samidaremp3.volume > 0)  samidaremp3.volume -= 0.9;
     if( tanjiromp3.volume > 0)  tanjiromp3.volume -= 0.9;
     if( fairytailmp3.volume > 0)  fairytailmp3.volume -= 0.9;
     if( blackrovermp3.volume > 0)  blackrovermp3.volume -= 0.9;
 
-}
-diminuir_volume()
+})()
+
 
 // atualizar o contador 
 function updateTimer() {
@@ -256,7 +256,7 @@ sub.addEventListener('click', function(){
 })
 
 naruto.addEventListener('click', function(){
-    removeBG()
+    removeAnimeBg()
     narutomp4.classList.toggle('hide')
     timer.style.color = "#B05000"
 
@@ -267,10 +267,10 @@ naruto.addEventListener('click', function(){
     svgElementSub.style.fill = '#FF7C00'
 })
 
-//var para pegar o card selecionado, após isso ela pegara e salvara para uso futuro, com controle no play. 
+
 
 nero.addEventListener('click', function(){
-    removeBG()
+    removeAnimeBg()
     blackmp4.classList.toggle('hide')
     timer.style.color = "#A4D580"
 
@@ -287,7 +287,7 @@ nero.addEventListener('click', function(){
 
 
 tanjiro.addEventListener('click', function(){
-    removeBG()
+    removeAnimeBg()
     nezukomp4.classList.toggle('hide')
     
     
@@ -304,7 +304,7 @@ tanjiro.addEventListener('click', function(){
 })
 
 natsu.addEventListener('click', function(){
-    removeBG()
+    removeAnimeBg()
     natsump4.classList.toggle('hide')
     timer.style.color = "#B73829"
 
@@ -320,7 +320,53 @@ natsu.addEventListener('click', function(){
  
 
 
+const changeTheme = document.querySelector(".circle")
+const animeTheme = document.querySelector(".cards")
+const standardTheme = document.querySelector(".cards2")
+
+const forestCard = document.querySelector("#forest")
+const rainCard = document.querySelector("#rain")
+const marketCard = document.querySelector("#market")
+const fireCard = document.querySelector("#fire")
+
+const forestmp3 = new Audio("./audio/Floresta.mp3")
+const coffeemp3 = new Audio("./audio/Cafeteria.mp3")
+const fireplacemp3 = new Audio("./audio/Lareira.mp3")
+const rainmp3 = new Audio("./audio/Chuva.mp3")
+
+
+changeTheme.addEventListener('click', function(){
+    removeAnimeBg()
+    animeTheme.classList.toggle('hide')
+    standardTheme.classList.toggle('hide')
+    stopAllMp3Standard()
+})
+
+function stopAllMp3Standard(){
+    forestmp3.pause()
+    rainmp3.pause()
+    coffeemp3.pause()
+    fireplacemp3.pause()
+}
+
+forestCard.addEventListener('click', function(){
+    forestmp3.play()
+})
+
+rainCard.addEventListener('click', function(){
+    rainmp3.play()
+})
+
+marketCard.addEventListener('click', function(){
+    coffeemp3.play()
+
+})
+
+fireCard.addEventListener('click', function(){
+    fireplacemp3.play()
+})
 
 
 
+//const blackrovermp3 = new Audio("./audio/blackrover.mp3")
 

@@ -57,7 +57,7 @@ body{
     
 }
 
-.cards {
+.cards, .cards2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -68,7 +68,7 @@ body{
   }
   
   
-  .cards img {
+  .cards img, .cards2 img {
     width: 13.8rem;
     
   }
