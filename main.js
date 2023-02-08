@@ -336,6 +336,7 @@ const rainmp3 = new Audio("./audio/Chuva.mp3")
 
 
 changeTheme.addEventListener('click', function(){
+    stopAllMp3()
     removeAnimeBg()
     animeTheme.classList.toggle('hide')
     standardTheme.classList.toggle('hide')
@@ -368,5 +369,43 @@ fireCard.addEventListener('click', function(){
 
 
 
-//const blackrovermp3 = new Audio("./audio/blackrover.mp3")
+const selectAnimeTheme = document.querySelector(".theme1")
+const selectStandardTheme = document.querySelector(".theme2")
+const selectTheme = document.querySelector(".changeTheme")
+const containerTimer = document.querySelector(".container")
+const lightModeActive = document.querySelector(".light-mode")
+const darkModeActive = document.querySelector(".dark-mode")
 
+selectAnimeTheme.addEventListener('click', function(){
+    selectTheme.classList.add('hide')
+    containerTimer.classList.remove('hide')
+    removeAllStandardChanges()
+})
+
+selectStandardTheme.addEventListener('click', function(){
+    selectTheme.classList.add('hide')
+    containerTimer.classList.remove('hide')
+    animeTheme.classList.toggle('hide')
+    standardTheme.classList.toggle('hide')
+    lightModeActive.classList.remove('hide')
+})
+
+lightModeActive.addEventListener('click', function(){
+    lightModeActive.classList.add('hide')
+    darkModeActive.classList.remove('hide')
+    document.body.style.setProperty('--bg-color-primary', 'black')
+
+})
+
+darkModeActive.addEventListener('click', function(){
+    lightModeActive.classList.remove('hide')
+    darkModeActive.classList.add('hide')
+    document.body.style.setProperty('--bg-color-primary', 'white')
+
+})
+
+function removeAllStandardChanges(){
+    darkModeActive.classList.add('hide')
+    lightModeActive.classList.add('hide')
+
+}

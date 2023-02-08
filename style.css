@@ -9,15 +9,18 @@
     font-family: 'Roboto', sans-serif;
 
     --text-color-primary: #323238;
+
+    --bg-color-primary: #ffffff;
+    --bg-color-secondary: #000000;
 }
 
 
 body{
-    background-color: #ffffff;
+    background-color: var(--bg-color-primary);
 
 }
 
-.container{
+.container, .changeTheme{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,9 +143,68 @@ video{
 }
 
 
+.box-container h1{
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+}
+
+.theme1, .theme2{
+    margin: 5rem;
+    width: 50rem; 
+    
+}
+
+.theme1:hover{
+    border: 1px solid red;
+    opacity: 0.3;
+    
+}
+
+.theme2:hover{
+    border: 1px solid red;
+    opacity: 0.3;
+   
+}
 
 
 
+.changeTheme {
+    position: relative;
+  }
+  
+  .theme1-text, .theme2-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .theme1:hover + .theme1-text {
+    display: block;
+  }
+  
+  .theme2:hover + .theme2-text {
+    display: block;
+  }
+  
+  .theme1-text, .theme2-text {
+    display: none;
+  }
+
+  
+  
+  .light-mode, .dark-mode{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 4rem;
+    margin-top: 2rem;
+  }
 
 
 
