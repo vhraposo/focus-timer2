@@ -337,6 +337,7 @@ const rainmp3 = new Audio("./audio/Chuva.mp3")
 
 changeTheme.addEventListener('click', function(){
     stopAllMp3()
+    removeAllStandardChanges()
     removeAnimeBg()
     animeTheme.classList.toggle('hide')
     standardTheme.classList.toggle('hide')
@@ -350,21 +351,114 @@ function stopAllMp3Standard(){
     fireplacemp3.pause()
 }
 
+
+
+
+const forestFillAdd = document.querySelector('#forest > svg')
+
+let isPlaying = false
+function toggleForestMp3(){
+    if (isPlaying){
+        forestmp3.pause()
+    }else{
+        forestmp3.play()
+    }
+
+    forestmp3.onplaying = function(){
+        isPlaying=true
+    }
+    forestmp3.onpause = function(){
+        forestmp3.currentTime = 0 
+        isPlaying = false
+    }
+}
+
+function toggleRainMp3(){
+    if (isPlaying){
+        rainmp3.pause()
+    }else{
+        rainmp3.play()
+    }
+
+    rainmp3.onplaying = function(){
+        isPlaying=true
+    }
+    rainmp3.onpause = function(){
+        rainmp3.currentTime = 0 
+        isPlaying = false
+    }
+}
+
+function toggleMarketMp3(){
+    if (isPlaying){
+        coffeemp3.pause()
+    }else{
+        coffeemp3.play()
+    }
+
+    coffeemp3.onplaying = function(){
+        isPlaying=true
+    }
+    coffeemp3.onpause = function(){
+        coffeemp3.currentTime = 0 
+        isPlaying = false
+    }
+}
+
+function toggleFireplaceMp3(){
+    if (isPlaying){
+        fireplacemp3.pause()
+    }else{
+        fireplacemp3.play()
+    }
+
+    fireplacemp3.onplaying = function(){
+        isPlaying=true
+    }
+    fireplacemp3.onpause = function(){
+        fireplacemp3.currentTime = 0 
+        isPlaying = false
+    }
+}
+
+
+
 forestCard.addEventListener('click', function(){
-    forestmp3.play()
+  
+    stopAllMp3Standard()
+    isPlaying = false
+    toggleForestMp3()
+
+    document.querySelector('#colorfill').classList.toggle('colorfillchange')
+    
 })
 
+
+
 rainCard.addEventListener('click', function(){
-    rainmp3.play()
+    stopAllMp3Standard()
+    isPlaying = false
+
+    toggleRainMp3()
+    document.querySelector('#colorfill2').classList.toggle('colorfillchange')
+
 })
 
 marketCard.addEventListener('click', function(){
-    coffeemp3.play()
+    stopAllMp3Standard()
+    isPlaying = false
 
+    toggleMarketMp3()
+    document.querySelector('#colorfill3').classList.toggle('colorfillchange')
 })
 
 fireCard.addEventListener('click', function(){
-    fireplacemp3.play()
+    stopAllMp3Standard()
+    isPlaying = false
+
+    toggleFireplaceMp3()
+    document.querySelector('#colorfill4').classList.toggle('colorfillchange')
+
 })
 
 
@@ -375,11 +469,15 @@ const selectTheme = document.querySelector(".changeTheme")
 const containerTimer = document.querySelector(".container")
 const lightModeActive = document.querySelector(".light-mode")
 const darkModeActive = document.querySelector(".dark-mode")
+const titleTheme = document.querySelector(".title-theme")
+
 
 selectAnimeTheme.addEventListener('click', function(){
     selectTheme.classList.add('hide')
     containerTimer.classList.remove('hide')
     removeAllStandardChanges()
+    document.body.style.setProperty('--bg-color-primary', 'white')
+
 })
 
 selectStandardTheme.addEventListener('click', function(){
@@ -388,12 +486,17 @@ selectStandardTheme.addEventListener('click', function(){
     animeTheme.classList.toggle('hide')
     standardTheme.classList.toggle('hide')
     lightModeActive.classList.remove('hide')
+    
 })
 
 lightModeActive.addEventListener('click', function(){
     lightModeActive.classList.add('hide')
     darkModeActive.classList.remove('hide')
     document.body.style.setProperty('--bg-color-primary', 'black')
+    timer.style.setProperty('color', 'white')
+    setAllButtonsWhite()
+    titleTheme.style.setProperty('color', 'white')
+    
     
 })
 
@@ -401,7 +504,11 @@ darkModeActive.addEventListener('click', function(){
     lightModeActive.classList.remove('hide')
     darkModeActive.classList.add('hide')
     document.body.style.setProperty('--bg-color-primary', 'white')
-    
+    timer.style.setProperty('color', 'black')
+    setAllButtonsBlack()
+    titleTheme.style.setProperty('color', 'black')
+
+  
 
 })
 
@@ -410,3 +517,26 @@ function removeAllStandardChanges(){
     lightModeActive.classList.add('hide')
 
 }
+
+
+function setAllButtonsBlack(){
+    svgElementPlay.style.fill = 'black'
+    svgElementPause.style.fill = 'black'
+    svgElementStop.style.fill = 'black'
+    svgElementSum.style.fill = 'black'
+    svgElementSub.style.fill = 'black'
+}
+
+function setAllButtonsWhite(){
+    svgElementPlay.style.fill = 'white'
+    svgElementPause.style.fill = 'white'
+    svgElementStop.style.fill = 'white'
+    svgElementSum.style.fill = 'white'
+    svgElementSub.style.fill = 'white'
+}
+
+
+
+
+
+

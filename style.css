@@ -151,6 +151,7 @@ video{
 .theme1, .theme2{
     margin: 5rem;
     width: 50rem; 
+    border-radius: 2rem;
     
 }
 
@@ -210,5 +211,9 @@ video{
 
 h1{
     color: var( --text-color-primary);
+}
+
+.colorfillchange{
+    fill: #9898F6;
 }
 
