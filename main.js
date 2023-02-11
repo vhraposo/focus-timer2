@@ -44,7 +44,7 @@ const nerovolumedown = document.querySelector(".nerovolumedown")
 
 const playtanjiro = document.querySelector(".playtanjiro")
 
-const changeTheme = document.querySelector(".circle")
+const backToHome = document.querySelector(".home")
 const animeTheme = document.querySelector(".cards")
 const standardTheme = document.querySelector(".cards2")
 
@@ -57,6 +57,19 @@ const forestmp3 = new Audio("./audio/Floresta.mp3")
 const coffeemp3 = new Audio("./audio/Cafeteria.mp3")
 const fireplacemp3 = new Audio("./audio/Lareira.mp3")
 const rainmp3 = new Audio("./audio/Chuva.mp3")
+
+const selectAnimeTheme = document.querySelector(".theme1")
+const selectStandardTheme = document.querySelector(".theme2")
+const selectTheme = document.querySelector(".changeTheme")
+const containerTimer = document.querySelector(".container")
+const lightModeActive = document.querySelector(".light-mode")
+const darkModeActive = document.querySelector(".dark-mode")
+const titleTheme = document.querySelector(".title-theme")
+
+
+
+let volume_slider = document.querySelector(".slider input[type='range']");
+let volume_display = document.querySelector(".sliderValue");
 
 
 function allVolumesdown(){
@@ -336,20 +349,6 @@ natsu.addEventListener('click', function(){
     svgElementSub.style.fill = '#F8D15E'
 })
 
-    
- 
-
-
-
-
-changeTheme.addEventListener('click', function(){
-    stopAllMp3()
-    removeAllStandardChanges()
-    removeAnimeBg()
-    animeTheme.classList.toggle('hide')
-    standardTheme.classList.toggle('hide')
-    stopAllMp3Standard()
-})
 
 function stopAllMp3Standard(){
     forestmp3.pause()
@@ -470,13 +469,6 @@ fireCard.addEventListener('click', function(){
 
 
 
-const selectAnimeTheme = document.querySelector(".theme1")
-const selectStandardTheme = document.querySelector(".theme2")
-const selectTheme = document.querySelector(".changeTheme")
-const containerTimer = document.querySelector(".container")
-const lightModeActive = document.querySelector(".light-mode")
-const darkModeActive = document.querySelector(".dark-mode")
-const titleTheme = document.querySelector(".title-theme")
 
 
 selectAnimeTheme.addEventListener('click', function(){
@@ -484,17 +476,34 @@ selectAnimeTheme.addEventListener('click', function(){
     containerTimer.classList.remove('hide')
     removeAllStandardChanges()
     document.body.style.setProperty('--bg-color-primary', 'white')
+    animeTheme.classList.remove('hide')
+    standardTheme.classList.add('hide')
 
 })
 
 selectStandardTheme.addEventListener('click', function(){
     selectTheme.classList.add('hide')
     containerTimer.classList.remove('hide')
-    animeTheme.classList.toggle('hide')
-    standardTheme.classList.toggle('hide')
+    animeTheme.classList.add('hide')
+    standardTheme.classList.remove('hide')
     lightModeActive.classList.remove('hide')
     
 })
+
+backToHome.addEventListener('click', function(){
+    stopAllMp3()
+    removeAllStandardChanges()
+    removeAnimeBg()
+    stopAllMp3Standard()
+    containerTimer.classList.add('hide')
+    selectTheme.classList.remove('hide')
+    animeTheme.classList.add('hide')
+    standardTheme.classList.add('hide')
+
+})
+
+
+
 
 lightModeActive.addEventListener('click', function(){
     lightModeActive.classList.add('hide')
@@ -545,8 +554,7 @@ function setAllButtonsWhite(){
 
 
 
-let volume_slider = document.querySelector(".slider input[type='range']");
-let volume_display = document.querySelector(".sliderValue");
+
 
 volume_slider.addEventListener("input", function() {
   setVolume();

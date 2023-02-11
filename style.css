@@ -301,3 +301,8 @@ h1{
     color: rgb(82, 65, 199);
     margin-bottom: 0.7rem;
 }
+
+.home{
+    width: 5rem;
+    padding-top: 1rem;
+}
