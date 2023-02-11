@@ -2,7 +2,7 @@ let minutes = document.querySelector(".minutes")
 let seconds = document.querySelector(".seconds")
 let timer = document.querySelector(".timerzone")
 
-let intervalId;
+let intervalId
 
 const play = document.querySelector(".play")
 const pause = document.querySelector(".pause")
@@ -44,12 +44,27 @@ const nerovolumedown = document.querySelector(".nerovolumedown")
 
 const playtanjiro = document.querySelector(".playtanjiro")
 
+const changeTheme = document.querySelector(".circle")
+const animeTheme = document.querySelector(".cards")
+const standardTheme = document.querySelector(".cards2")
+
+const forestCard = document.querySelector("#forest")
+const rainCard = document.querySelector("#rain")
+const marketCard = document.querySelector("#market")
+const fireCard = document.querySelector("#fire")
+
+const forestmp3 = new Audio("./audio/Floresta.mp3")
+const coffeemp3 = new Audio("./audio/Cafeteria.mp3")
+const fireplacemp3 = new Audio("./audio/Lareira.mp3")
+const rainmp3 = new Audio("./audio/Chuva.mp3")
+
+
 function allVolumesdown(){
     narutovolumedown.classList.remove('hide')
     natsuvolumedown.classList.remove('hide')
     tanjirovolumedown.classList.remove('hide')
     nerovolumedown.classList.remove('hide')
-
+    
     narutovolume.classList.add('hide')
     natsuvolume.classList.add('hide')
     tanjirovolume.classList.add('hide')
@@ -57,11 +72,11 @@ function allVolumesdown(){
 }
 narutovolumedown.addEventListener('click', function(){
     allVolumesdown()
-        narutovolumedown.classList.add('hide')
-        narutovolume.classList.remove('hide')
-        stopAllMp3()
-        samidaremp3.play()
-    }   
+    narutovolumedown.classList.add('hide')
+    narutovolume.classList.remove('hide')
+    stopAllMp3()
+    samidaremp3.play()
+}   
 )
 narutovolume.addEventListener('click', function(){
     narutovolumedown.classList.remove('hide')
@@ -182,6 +197,11 @@ function audioLoop(){
     tanjiromp3.loop = true
     fairytailmp3.loop = true
     blackrovermp3.loop = true
+
+    forestmp3.loop = true
+    coffeemp3.loop = true
+    fireplacemp3.loop = true
+    rainmp3.loop = true
 }
 audioLoop()
 
@@ -320,19 +340,6 @@ natsu.addEventListener('click', function(){
  
 
 
-const changeTheme = document.querySelector(".circle")
-const animeTheme = document.querySelector(".cards")
-const standardTheme = document.querySelector(".cards2")
-
-const forestCard = document.querySelector("#forest")
-const rainCard = document.querySelector("#rain")
-const marketCard = document.querySelector("#market")
-const fireCard = document.querySelector("#fire")
-
-const forestmp3 = new Audio("./audio/Floresta.mp3")
-const coffeemp3 = new Audio("./audio/Cafeteria.mp3")
-const fireplacemp3 = new Audio("./audio/Lareira.mp3")
-const rainmp3 = new Audio("./audio/Chuva.mp3")
 
 
 changeTheme.addEventListener('click', function(){
@@ -538,5 +545,20 @@ function setAllButtonsWhite(){
 
 
 
+let volume_slider = document.querySelector(".slider input[type='range']");
+let volume_display = document.querySelector(".sliderValue");
 
+volume_slider.addEventListener("input", function() {
+  setVolume();
+});
 
+function setVolume() {
+  let volume = volume_slider.value / 100;
+  forestmp3.volume = volume;
+  coffeemp3.volume = volume;
+  fireplacemp3.volume = volume;
+  rainmp3.volume = volume;
+  volume_display.innerHTML = volume_slider.value
+  
+
+}

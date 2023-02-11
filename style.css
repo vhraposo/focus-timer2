@@ -217,3 +217,87 @@ h1{
     fill: #9898F6;
 }
 
+.slider-cont{
+    box-shadow: 0 1px 1rem 0 rgba(0, 0, 0, 0.1);
+    padding-top: 3rem;
+    padding-right: 2rem;
+    border-radius: 5.0rem;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.slider{
+    position: relative;
+    width: 30.0rem;
+    height: .8rem;
+}
+
+.slider input[type="range"]{
+    position: absolute;
+    left: -2px;
+    top: 0;
+    width: 30.4rem;
+    height: .8rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    z-index: 99;
+}
+
+.slider input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    margin-top: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #fff;
+    border: 2px solid #9898F6;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px #fff;
+    border-radius: 60%;
+}
+
+.slider input::-webkit-slider-thumb:hover{
+    transform: scale(1.1);
+}
+.slider progress{
+    width: 30.0rem;
+    height: .8rem;
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 0;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.slider progress::-webkit-progress-bar{
+    background: #7575d9;
+}
+
+.slider progress::-webkit-progress-value{
+    background: #4f4fbf;
+}
+
+.sliderValue{
+    font-family: "Google Sans Regular";
+    width: 2.8rem;
+    height: 2rem;
+    letter-spacing: 0.3rem;
+    margin-left: 1rem;
+    text-align: center;
+
+    display: flex;
+    color: rgb(82, 65, 199);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.slider-porc{
+    width: 1rem;
+    display: flex;
+    color: rgb(82, 65, 199);
+    margin-bottom: 0.7rem;
+}
