@@ -314,6 +314,10 @@ h1{
     margin-left: 1.5rem;
 }
 
+.title-theme{
+    margin-top: 1.5rem;
+}
+
 @media (max-width: 600px){
 
    
