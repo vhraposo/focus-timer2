@@ -310,7 +310,8 @@ h1{
 
 .home{
     width: 5rem;
-    padding-top: 1rem;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
 }
 
 @media (max-width: 600px){

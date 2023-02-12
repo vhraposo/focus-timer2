@@ -490,8 +490,10 @@ fireCard.addEventListener('click', function(){
 
 
 selectAnimeTheme.addEventListener('click', function(){
+
     selectTheme.classList.add('hide')
     containerTimer.classList.remove('hide')
+    backToHome.classList.remove('hide')
     removeAllStandardChanges()
     document.body.style.setProperty('--bg-color-primary', 'white')
     animeTheme.classList.remove('hide')
@@ -503,6 +505,8 @@ selectStandardTheme.addEventListener('click', function(){
     selectTheme.classList.add('hide')
     containerTimer.classList.remove('hide')
     animeTheme.classList.add('hide')
+    backToHome.classList.remove('hide')
+
     standardTheme.classList.remove('hide')
     lightModeActive.classList.remove('hide')
     
