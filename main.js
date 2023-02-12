@@ -262,6 +262,7 @@ pause.addEventListener('click', function(){
     pauseTimer() 
     stopAllMp3() 
     verifyIsPlaying()
+    allVolumesdown()
 })
 
 stop.addEventListener('click', function(){
@@ -272,6 +273,8 @@ stop.addEventListener('click', function(){
         pause.classList.add('hide')
         play.classList.remove('hide')
      }
+
+     allVolumesdown()
      
 })
 
@@ -429,13 +432,22 @@ function toggleFireplaceMp3(){
 
 
 
+function removeAllStandardClicksOnCard(){
+    document.querySelector('#colorfill').classList.remove('colorfillchange')
+    document.querySelector('#colorfill2').classList.remove('colorfillchange')
+    document.querySelector('#colorfill3').classList.remove('colorfillchange')
+    document.querySelector('#colorfill4').classList.remove('colorfillchange')
+
+}
+
+
 forestCard.addEventListener('click', function(){
   
     stopAllMp3Standard()
     isPlaying = false
     toggleForestMp3()
-
-    document.querySelector('#colorfill').classList.toggle('colorfillchange')
+    removeAllStandardClicksOnCard()
+    document.querySelector('#colorfill').classList.toggle('colorfillchange')   
     
 })
 
@@ -446,6 +458,8 @@ rainCard.addEventListener('click', function(){
     isPlaying = false
 
     toggleRainMp3()
+    
+    removeAllStandardClicksOnCard()
     document.querySelector('#colorfill2').classList.toggle('colorfillchange')
 
 })
@@ -455,6 +469,8 @@ marketCard.addEventListener('click', function(){
     isPlaying = false
 
     toggleMarketMp3()
+   
+    removeAllStandardClicksOnCard()
     document.querySelector('#colorfill3').classList.toggle('colorfillchange')
 })
 
@@ -463,6 +479,8 @@ fireCard.addEventListener('click', function(){
     isPlaying = false
 
     toggleFireplaceMp3()
+    
+    removeAllStandardClicksOnCard()
     document.querySelector('#colorfill4').classList.toggle('colorfillchange')
 
 })

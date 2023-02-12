@@ -217,6 +217,12 @@ h1{
     fill: #9898F6;
 }
 
+.colorfill{
+    fill: black;
+}
+
+
+
 .slider-cont{
     box-shadow: 0 1px 1rem 0 rgba(0, 0, 0, 0.1);
     padding-top: 3rem;
@@ -305,4 +311,134 @@ h1{
 .home{
     width: 5rem;
     padding-top: 1rem;
+}
+
+@media (max-width: 600px){
+
+   
+    body{
+        width: 30rem;
+        
+    }
+    .home{
+        margin-left: 1rem;
+    }
+
+    .box-container{
+        width: 100%
+    }
+
+    .theme1, .theme2 {
+        width: 35rem;
+        
+    }
+
+
+    .title-theme{
+        font-size: 1.3rem;
+       
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .title-theme{
+        display: none;
+    }
+
+    .title-theme-mobile{
+        display: initial;
+        text-align: center;
+        padding-left: 5rem;
+    }
+
+    .light-mode, .dark-mode{
+        margin-left: 5rem;
+    }
+
+    .container{
+        width: 50rem;
+        justify-content: left;
+    }
+
+    .timer{
+        width: 1rem;
+        padding-right: 5rem;
+
+        
+    }
+
+    .controls{
+        width: 5rem;
+    }
+
+    .cards, .cards2{
+        width: 10rem;
+    }
+
+    .cards img, .cards2 img {
+        width: 8.8rem;
+        
+    }
+
+    
+
+    .cards2{
+        gap: 2rem;
+       
+    }
+
+    
+
+    .card:nth-child(2){
+        width: 22rem;
+    }
+
+    #forest{
+        width: 10rem;
+    }
+    #rain{
+        width: 10rem;
+    }
+    #market{
+        width: 10rem;
+    }
+    #fire{
+        width: 10rem;
+    }
+
+
+    .slider{
+        padding-bottom: 4rem;
+    }
+
+   
+    
+
+      .timerzone{
+        
+        font-size: 1rem;
+        display: flex;
+        margin-bottom: 1.6rem;
+        font-size: 5.6rem;
+        width: 40.1rem;
+        line-height: 3.8rem; 
+        
+    }
+
+    .controls{
+        gap: 1rem;
+        
+    }
+
+    .controls svg{
+        width: 3rem;
+    }
+
+    .timer{
+        margin-right: 15.2rem ;
+    }
 }
