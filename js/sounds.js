@@ -111,8 +111,6 @@ const sliderValue = document.querySelector('.sliderValue')
 const sliderProgress = document.querySelector('.slider_progress')
 
 volumeSlider.addEventListener('input',()=>{
-
-    console.log(volumeSlider.value)
     sliderValue.innerHTML = volumeSlider.value
     sliderProgress.value = volumeSlider.value
     setVolume()

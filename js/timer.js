@@ -1,9 +1,4 @@
-
-export {
-    timer
-}
-
-
+export { timer}
 
 let minutes = document.querySelector(".minutes")
 let seconds = document.querySelector(".seconds")
@@ -14,12 +9,8 @@ let intervalId
     seconds = Number('00');
     timer.innerHTML = String(minutes).padStart(2, "0") + ":" + (seconds < 10 ? "0" : "") + seconds; 
 
-
-    // atualizar o contador 
+// update the counter
 export function updateTimer() {
-
-
-
     seconds--;
     if (seconds < 0) {
         minutes--;
@@ -32,7 +23,6 @@ export function updateTimer() {
     }
 }
 
-    // iniciar o contador 
   export  function startTimer() {
         intervalId = setInterval(updateTimer, 1000);
     }

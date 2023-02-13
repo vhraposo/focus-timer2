@@ -1,5 +1,5 @@
 import {updateTimer, startTimer, pauseTimer, resetTimer, incrementMinutes, decreaseMinutes, timer } from './timer.js'
-import{toggleForestMp3, toggleRainMp3, toggleMarketMp3, toggleFireplaceMp3, setVolume, stopAllMp3,stopAllMp3Standard,isPlaying, isPlayingToFalse}from './sounds.js'
+import{toggleForestMp3, toggleRainMp3, toggleMarketMp3, toggleFireplaceMp3, stopAllMp3,stopAllMp3Standard, isPlayingToFalse}from './sounds.js'
 
 import{
     play,
@@ -52,11 +52,6 @@ import{
     voldown
 }from "./elements.js"
 
-
-
-
-let volume_slider = document.querySelector(".slider input[type='range']");
-let volume_display = document.querySelector(".sliderValue");
 
 function allVolumesdown(){
     narutovolumedown.classList.remove('hide')
@@ -112,8 +107,7 @@ tanjirovolume.addEventListener('click', function(){
     tanjirovolumedown.classList.remove('hide')
     stopAllMp3()
     tanjiromp3.pause()
-
-    
+ 
 })
 
 nerovolumedown.addEventListener('click', function(){
@@ -148,7 +142,6 @@ play.addEventListener('click', function(){
     
 })
 
-
 function verifyIsPlaying(){
     volup.classList.add('hide')
     voldown.classList.remove('hide')
@@ -172,7 +165,6 @@ stop.addEventListener('click', function(){
         pause.classList.add('hide')
         play.classList.remove('hide')
      }
-
      allVolumesdown()
      
 })
@@ -245,9 +237,7 @@ function removeAllStandardClicksOnCard(){
     document.querySelector('#colorfill2').classList.remove('colorfillchange')
     document.querySelector('#colorfill3').classList.remove('colorfillchange')
     document.querySelector('#colorfill4').classList.remove('colorfillchange')
-
 }
-
 
 forestCard.addEventListener('click', function(){
   
@@ -258,8 +248,6 @@ forestCard.addEventListener('click', function(){
     document.querySelector('#colorfill').classList.toggle('colorfillchange')   
     
 })
-
-
 
 rainCard.addEventListener('click', function(){
     stopAllMp3Standard()
@@ -292,10 +280,6 @@ fireCard.addEventListener('click', function(){
     document.querySelector('#colorfill4').classList.toggle('colorfillchange')
 
 })
-
-
-
-
 
 selectAnimeTheme.addEventListener('click', function(){
 
@@ -332,9 +316,6 @@ backToHome.addEventListener('click', function(){
 
 })
 
-
-
-
 lightModeActive.addEventListener('click', function(){
     lightModeActive.classList.add('hide')
     darkModeActive.classList.remove('hide')
@@ -342,8 +323,7 @@ lightModeActive.addEventListener('click', function(){
     timer.style.setProperty('color', 'white')
     setAllButtonsWhite()
     titleTheme.style.setProperty('color', 'white')
-    
-    
+       
 })
 
 darkModeActive.addEventListener('click', function(){
@@ -354,8 +334,6 @@ darkModeActive.addEventListener('click', function(){
     setAllButtonsBlack()
     titleTheme.style.setProperty('color', 'black')
 
-  
-
 })
 
 function removeAllStandardChanges(){
@@ -364,7 +342,6 @@ function removeAllStandardChanges(){
 
 }
 
-
 function setAllButtonsBlack(){
     svgElementPlay.style.fill = 'black'
     svgElementPause.style.fill = 'black'
@@ -372,7 +349,6 @@ function setAllButtonsBlack(){
     svgElementSum.style.fill = 'black'
     svgElementSub.style.fill = 'black'
 }
-
 function setAllButtonsWhite(){
     svgElementPlay.style.fill = 'white'
     svgElementPause.style.fill = 'white'
